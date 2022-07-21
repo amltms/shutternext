@@ -10,6 +10,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Films and TV shows review app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1>hi</h1>
 
     </div>
   )
