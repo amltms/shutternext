@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
-type Props = {};
-
 const Container = styled.div`
 	display: flex;
 	align-items: flex-end;
@@ -11,12 +9,12 @@ const Container = styled.div`
 const Logo = styled.a`
 	line-height: 0.7;
 	font-size: 50px;
-	font-weight: bold;
+	font-weight: 900;
 	margin-right: 1.5rem;
 	transition: 0.3s;
 	letter-spacing: 0.1rem;
 	color: ${({ theme }) => theme.colors.primary};
-	-webkit-text-stroke: ${({ theme }) => theme.colors.primary};
+	-webkit-text-stroke: 1px ${({ theme }) => theme.colors.primary};
 	:hover {
 		color: rgba(0, 0, 0, 0);
 	}
@@ -53,7 +51,7 @@ const NavLinks = styled.div`
 	}
 `;
 
-const NavLeft = (props: Props) => {
+const NavLeft = () => {
 	return (
 		<Container>
 			<Link href="/" passHref>

@@ -2,4 +2,4 @@
 
 ## Preview
 
-Preview on [http://shutteraml.vercel.app/](http://shutteraml.vercel.app/):
+Preview on [http://shutteraml.vercel.app/](http://shutteraml.vercel.app/)

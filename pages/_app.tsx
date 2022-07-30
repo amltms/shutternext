@@ -1,30 +1,8 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 import Nav from '../components/nav/Nav';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-`;
-
-interface ThemeInterface {
-	colors: {
-		primary: string;
-	};
-}
-
-const theme: ThemeInterface = {
-	colors: {
-		primary: '#0070f3',
-	},
-};
+import GlobalStyle from '../styles/globalStyles';
+import { theme } from '../styles/theme';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -32,6 +10,14 @@ export default function App({ Component, pageProps }) {
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
 				<Nav />
+				<Head>
+					<title>Shutter</title>
+					<meta name="description" content="Shutter Home" />
+					<link rel="icon" href="/favicon.ico" />
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
+					<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet" />
+				</Head>
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</>

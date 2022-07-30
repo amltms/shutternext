@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import NavLeft from './NavLeft';
-type Props = {};
+import { NavRight } from './NavRight';
 
 const NavBar = styled.div`
 	z-index: 1000;
@@ -13,10 +13,11 @@ const NavBar = styled.div`
 	align-items: baseline;
 `;
 
-const Nav = (props: Props) => {
+const Nav = () => {
 	return (
 		<NavBar>
 			<NavLeft />
+			<NavRight />
 		</NavBar>
 	);
 };
