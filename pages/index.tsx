@@ -1,19 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components';
+type Props = {};
 
-const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Home</title>
-        <meta name="description" content="Films and TV shows review app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>hi</h1>
+const Title = styled.h1`
+	font-size: 50px;
+	color: ${({ theme }) => theme.colors.primary};
+`;
 
-    </div>
-  )
-}
+const index = (props: Props) => {
+	return <Title>My page</Title>;
+};
 
-export default Home
+export default index;
