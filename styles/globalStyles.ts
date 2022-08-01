@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    overflow: scroll;
+	  overflow: overlay;
     box-sizing: border-box;
 	  background: black;
     font-family: 'Roboto';
@@ -43,6 +45,32 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     color: white;
     transition: 0.5s;
+  }
+
+    /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 1rem;
+    background-color: rgba(101, 101, 101, 0.5);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 1rem;
+    background-color: rgba(35, 35, 35, 0.8);
   }
 `;
 

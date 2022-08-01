@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import Nav from '../components/nav/Nav';
 import GlobalStyle from '../styles/globalStyles';
 import { theme } from '../styles/theme';
+import { AnimatePresence } from 'framer-motion';
+
+import Nav from '../components/nav/Nav';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -18,7 +20,9 @@ export default function App({ Component, pageProps }) {
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet" />
 				</Head>
-				<Component {...pageProps} />
+				<AnimatePresence exitBeforeEnter initial={false}>
+					<Component {...pageProps} />
+				</AnimatePresence>
 			</ThemeProvider>
 		</>
 	);
