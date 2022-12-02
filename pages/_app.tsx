@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
+
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/globalStyles';
 import { theme } from '../styles/theme';
@@ -10,6 +12,7 @@ export default function App({ Component, pageProps }) {
 	return (
 		<>
 			<GlobalStyle />
+			<Analytics />
 			<ThemeProvider theme={theme}>
 				<Nav />
 				<Head>
