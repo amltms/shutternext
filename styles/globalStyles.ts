@@ -4,6 +4,9 @@ const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
     padding: 0;
+    color:white;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
   }
 
   body {
@@ -39,12 +42,30 @@ const GlobalStyle = createGlobalStyle`
     font-weight:300;
   }
 
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+  }
+
   button {
     background: none;
     border: none;
     outline: none;
     color: white;
     transition: 0.5s;
+  }
+
+  img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
   }
 
     /* width */

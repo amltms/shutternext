@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ItemAttributes } from '../../types';
@@ -111,6 +112,13 @@ const GenreName = styled.span`
 `;
 
 export const SlideContent: FC<Props> = ({ slideContent }) => {
+	const router = useRouter();
+	const { type } = router.query;
+
+	const handleOverview = () => {
+		router.push(`/overview/${slideContent.media_type ? slideContent.media_type : type}/${slideContent.id}`);
+	};
+
 	return (
 		<>
 			{slideContent && (
@@ -123,7 +131,7 @@ export const SlideContent: FC<Props> = ({ slideContent }) => {
 						</AnimateDiv>
 					</AnimateContainer>
 					<Link href={`/overview/${slideContent.media_type}/${slideContent.id}`}>
-						<DetailsBtn>More Details</DetailsBtn>
+						<DetailsBtn onClick={() => handleOverview()}>More Details</DetailsBtn>
 					</Link>
 				</Content>
 			)}

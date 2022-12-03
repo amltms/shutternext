@@ -2,6 +2,9 @@ interface ThemeInterface {
 	colors: {
 		[key: string]: string;
 	};
+	container: {
+		[key: string]: string;
+	};
 }
 
 export const theme: ThemeInterface = {
@@ -16,5 +19,8 @@ export const theme: ThemeInterface = {
 		lighterBaseColor: '#ee8d8d',
 		primaryTextColor: 'white',
 		secondaryTextColor: '#bdbcbc',
+	},
+	container: {
+		width: '4vw',
 	},
 };

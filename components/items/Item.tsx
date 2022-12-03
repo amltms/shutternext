@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { BsBookmark, BsBookmarkFill } from 'react-icons/bs';
 import styled from 'styled-components';
-import { ItemAttributes, ItemDB } from '../../types';
+import { ItemAttributes } from '../../types';
+import { useRouter } from 'next/router';
 
 export type ItemProps = {
 	item: ItemAttributes;
@@ -89,6 +89,8 @@ const PreviewContent = styled.div`
 	}
 `;
 export const Item = ({ item }: ItemProps) => {
+	const router = useRouter();
+	const { type } = router.query;
 	const [titleRef, setTitleRef] = useState(null);
 	const title: any = useRef<HTMLHeadingElement>(null);
 
@@ -99,7 +101,7 @@ export const Item = ({ item }: ItemProps) => {
 	return (
 		<ItemContainer>
 			<ItemPreview titleWidth={titleRef}>
-				<PreviewContent>
+				<PreviewContent onClick={() => router.push(`/overview/${item.media_type ? item.media_type : type}/${item.id}`)}>
 					<h2 ref={title}>{item.title || item.name}</h2>
 					<p>{(item.release_date || item.first_air_date || '----').substring(0, 4)}</p>
 				</PreviewContent>
