@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { ItemAttributes } from '../../../types';
 import getData from '../fetchData';
 
 type ResponseData = {
-	results?: any;
+	results?: ItemAttributes[];
 	error?: string;
 };
 

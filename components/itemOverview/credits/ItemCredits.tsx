@@ -34,8 +34,8 @@ export const ItemCredits = ({ credits }: Props) => {
 		<CastContainer>
 			<p>Cast</p>
 			<CastList>
-				{credits.cast?.slice(0, 3).map((person) => (
-					<CreditsProfile person={person} />
+				{credits.cast?.slice(0, 3).map((person, i) => (
+					<CreditsProfile key={i} person={person} />
 				))}
 			</CastList>
 			{director && (
@@ -44,8 +44,8 @@ export const ItemCredits = ({ credits }: Props) => {
 					<CastList>
 						<CreditsProfile person={director} />
 
-						{writers.map((w) => (
-							<CreditsProfile person={w} />
+						{writers.map((w, i) => (
+							<CreditsProfile key={i} person={w} />
 						))}
 					</CastList>
 				</>

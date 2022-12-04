@@ -11,28 +11,14 @@ export interface ItemAttributes {
 	release_date?: string;
 	first_air_date?: string;
 	last_air_date?: string;
+	vote_average: number;
+	vote_count: number;
+	runtime: number;
 }
 
 export interface ItemDB {
 	id: number;
 	media_type: string;
-}
-
-export interface Details {
-	id: number;
-	backdrop_path: string;
-	genres: Genre[];
-	poster_path: string;
-	media_type: string;
-	overview: string;
-	vote_average: number;
-	vote_count: number;
-	runtime: number;
-	title?: string;
-	name?: string;
-	release_date?: string;
-	first_air_date?: string;
-	last_air_date?: string;
 }
 
 export interface Credits {

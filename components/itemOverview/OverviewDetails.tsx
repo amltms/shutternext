@@ -1,11 +1,11 @@
 import { GoStar } from 'react-icons/go';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { Details } from '../../types';
+import { ItemAttributes } from '../../types';
 import { Item } from '../items/Item';
 
 interface Props {
-	item: Details;
+	item: ItemAttributes;
 }
 
 const DetailsContainer = styled.div`

@@ -22,6 +22,7 @@ const index = () => {
 			const data = await response.json();
 			setItems(data.results);
 		};
+
 		getData();
 	}, [type]);
 

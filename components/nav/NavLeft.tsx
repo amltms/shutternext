@@ -64,9 +64,6 @@ const NavLeft = () => {
 				<Link href="/tv">
 					<a>TV</a>
 				</Link>
-				<Link href="/saved">
-					<a>Saved</a>
-				</Link>
 			</NavLinks>
 		</Container>
 	);

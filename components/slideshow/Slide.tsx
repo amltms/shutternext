@@ -11,8 +11,9 @@ const SlideContainer = styled.div`
 	max-height: 100vh;
 	min-width: 100%;
 	overflow: hidden;
-	mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 100%);
+	mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
 `;
+
 const Backdrop = styled.img`
 	filter: brightness(60%);
 	min-height: 100vh;
@@ -25,7 +26,7 @@ const Backdrop = styled.img`
 	}
 `;
 
-export const Slide: FC<Props> = ({ item }) => {
+export const Slide = ({ item }: Props) => {
 	return (
 		<>
 			{item && (
