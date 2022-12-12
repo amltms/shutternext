@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { GoStar } from 'react-icons/go';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
@@ -57,6 +58,11 @@ const Genres = styled.div`
 		padding: 0.7rem;
 		margin: 0.5rem 1rem 0.5rem 0rem;
 		border-radius: 0.5rem;
+		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+		:hover {
+			border: 2px solid rgba(255, 255, 255, 0.8);
+		}
 	}
 	div:last-child {
 		margin-right: 0;
@@ -78,6 +84,9 @@ const Star = styled(GoStar)`
 `;
 
 export const OverviewDetails = ({ item }: Props) => {
+	const router = useRouter();
+	const { type } = router.query;
+
 	return (
 		<>
 			<h1>{item.title || item.name}</h1>
@@ -95,7 +104,9 @@ export const OverviewDetails = ({ item }: Props) => {
 
 					<Genres>
 						{item.genres?.map((g) => (
-							<div key={g.id}>{g.name}</div>
+							<div key={g.id} onClick={() => router.push(`/genre/${type}/${g.id}`)}>
+								{g.name}
+							</div>
 						))}
 					</Genres>
 					<Synopsis>{item.overview}</Synopsis>

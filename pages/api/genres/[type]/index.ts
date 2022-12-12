@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import getData from '../fetchData';
+import getData from '../../fetchData';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	try {
-		const { search } = req.query;
-		const data = await getData(`search/multi`, `&query=${search}`);
+		const { type } = req.query;
 
-		res.status(200).json(data.results);
+		const data = await getData(`genre/${type}/list`);
+		res.status(200).json(data.genres);
 	} catch (err) {
 		res.status(500).json({ error: 'failed to load data' });
 	}

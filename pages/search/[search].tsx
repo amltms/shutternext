@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { ItemList } from '../../components/items/ItemList';
+import Spinner from '../../components/utilities/Spinner';
 
 const SearchContainer = styled(motion.div)`
 	padding: 12vw 7vw;
@@ -28,7 +29,7 @@ const index = () => {
 	const getData = async () => {
 		const response = await fetch(`/api/search/${search}`);
 		const data = await response.json();
-		setSearchItems(data.results.results);
+		setSearchItems(data);
 		setTyping(false);
 	};
 
@@ -41,18 +42,21 @@ const index = () => {
 		}, 400);
 	}, [search]);
 
+	// if theres no search results, show a spinner while typing, and a message when not typing
+	if (searchItems.length === 0) {
+		return typing ? (
+			<Spinner />
+		) : (
+			<Text>
+				<h2>No Results</h2>
+			</Text>
+		);
+	}
+
 	return (
-		<>
-			{searchItems.length === 0 && typing === false ? (
-				<Text>
-					<h2>No Results</h2>
-				</Text>
-			) : (
-				<SearchContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-					<ItemList items={searchItems} />
-				</SearchContainer>
-			)}
-		</>
+		<SearchContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+			<ItemList items={searchItems} />
+		</SearchContainer>
 	);
 };
 
