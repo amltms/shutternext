@@ -1,12 +1,25 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: Helvetica;
+    src: url(../fonts/HelveticaWorld-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: Helvetica;
+    src: url(../fonts/HelveticaWorld-Bold.ttf);
+    font-weight: bold;
+  }
+
   *{
     margin: 0;
     padding: 0;
     color:white;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
+    box-sizing:border-box;
+    color:white;
   }
 
   body {
@@ -25,6 +38,11 @@ const GlobalStyle = createGlobalStyle`
   svg {
     cursor: pointer;
     vertical-align: sub;
+  }
+
+  textarea:focus,
+  input:focus {
+	  outline: none;
   }
 
   h1,

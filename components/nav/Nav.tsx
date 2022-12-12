@@ -53,6 +53,7 @@ const Nav = () => {
 	return (
 		<NavBar scrolled={scrolled}>
 			<NavLeft />
+			<NavRight />
 		</NavBar>
 	);
 };

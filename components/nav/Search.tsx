@@ -1,5 +1,6 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { FC, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MdSearch } from 'react-icons/md';
 
 interface searchProps {
@@ -40,7 +41,9 @@ const SearchBox = styled.div<searchProps>`
 	}
 `;
 
-export const Search: FC = () => {
+export const Search = () => {
+	const router = useRouter();
+	const { pathname } = router;
 	const [searchActive, setSearchActive] = useState(false);
 	const [searchValue, setSearchValue] = useState('');
 	const [focused, setFocused] = useState(false);
@@ -48,10 +51,26 @@ export const Search: FC = () => {
 	const onBlur = () => setFocused(false);
 
 	const searchInput = useRef<HTMLInputElement>(null);
+	const searching = pathname.startsWith('/search');
 
 	useEffect(() => {
 		searchActive && searchInput.current && searchInput.current.focus();
 	}, [searchActive]);
+
+	useEffect(() => {
+		if (searchValue) {
+			router.push(`/search/${searchValue}`);
+		} else if (!searchValue && !pathname.startsWith('/overview')) {
+			router.push(`/`);
+		}
+	}, [searchValue]);
+
+	useEffect(() => {
+		if (!searching && !focused) {
+			setSearchActive(false);
+			setSearchValue('');
+		}
+	}, [focused, pathname]);
 
 	return (
 		<>
