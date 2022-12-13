@@ -36,7 +36,7 @@ const Index = () => {
 	const [genres, setGenres] = useState([]);
 	const genreName = genres.find((genre) => genre.id === Number(id))?.name;
 
-	function getRandomInt(max): number {
+	function getRandomInt(max: number): number {
 		return Math.floor(Math.random() * max);
 	}
 

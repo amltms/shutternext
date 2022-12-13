@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ItemAttributes } from '../../types';
 
@@ -111,12 +111,28 @@ const GenreName = styled.span`
 	}
 `;
 
-export const SlideContent: FC<Props> = ({ slideContent }) => {
+export const SlideContent = ({ slideContent }: Props) => {
 	const router = useRouter();
 	const { type } = router.query;
+	const [genres, setGenres] = useState([]);
+	const filteredGenres = slideContent?.genre_ids && genres.filter((genre) => slideContent.genre_ids?.includes(genre.id));
+
+	useEffect(() => {
+		const getData = async () => {
+			const response = await fetch(`/api/genres/${type || 'all'}`);
+			const data = await response.json();
+			setGenres(data);
+		};
+
+		getData();
+	}, []);
 
 	const handleOverview = () => {
 		router.push(`/overview/${slideContent.media_type ? slideContent.media_type : type}/${slideContent.id}`);
+	};
+
+	const handleGenre = (genreId: number) => {
+		router.push(`/genre/${slideContent.media_type}/${genreId}`);
 	};
 
 	return (
@@ -125,9 +141,14 @@ export const SlideContent: FC<Props> = ({ slideContent }) => {
 				<Content>
 					<AnimateContainer>
 						<AnimateDiv key={slideContent.id}>
-							<Link href={`/overview/${slideContent.media_type}/${slideContent.id}`}>
-								<h1>{slideContent.title || slideContent.name}</h1>
-							</Link>
+							<h1>{slideContent.title || slideContent.name}</h1>
+							<Genres>
+								{filteredGenres?.map((genre) => (
+									<GenreName key={genre.id} onClick={() => handleGenre(genre.id)}>
+										{genre.name}
+									</GenreName>
+								))}
+							</Genres>
 						</AnimateDiv>
 					</AnimateContainer>
 					<Link href={`/overview/${slideContent.media_type}/${slideContent.id}`}>
