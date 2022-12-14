@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ItemAttributes } from '../../types';
@@ -12,7 +13,7 @@ const Content = styled.div`
 	position: absolute;
 	left: 0;
 	width: 100%;
-	z-index: 2;
+	z-index: 110;
 	bottom: 0;
 	padding: 0 4vw;
 	padding-bottom: 5vw;
@@ -37,35 +38,27 @@ const Content = styled.div`
 	}
 `;
 
-const DetailsBtn = styled.a`
-	transition: 0.3s;
+const DetailsBtn = styled.div`
+	transition: 0.5s;
 	font-size: 1.5rem;
-	margin-top: 0.5rem;
-	padding: 1rem 0;
+	padding: 1.2rem;
+	background: rgba(64, 64, 64, 0.5);
+	border-radius: 0.9rem;
 	position: relative;
 	display: inline-block;
-	font-weight: 300;
-	@media screen and (max-width: 900px) {
-		display: none;
-	}
-	:after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		transform: scaleX(1);
-		height: 1px;
-		bottom: -8px;
-		left: 0;
-		background-color: ${({ theme }) => theme.colors.primary};
-		transform-origin: bottom left;
-		transition: transform 0.3s ease-out;
-	}
-	:hover:after {
-		transform-origin: bottom right;
-		transform: scaleX(0);
+	margin-top: 1rem;
+	p {
+		vertical-align: middle;
+		display: inline-block;
+		font-size: 1.4rem;
 	}
 	:hover {
-		color: ${({ theme }) => theme.colors.primary};
+		cursor: pointer;
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	svg {
+		margin-right: 0.5rem;
 	}
 `;
 
@@ -152,7 +145,10 @@ export const SlideContent = ({ slideContent }: Props) => {
 						</AnimateDiv>
 					</AnimateContainer>
 					<Link href={`/overview/${slideContent.media_type}/${slideContent.id}`}>
-						<DetailsBtn onClick={() => handleOverview()}>More Details</DetailsBtn>
+						<DetailsBtn onClick={() => handleOverview()}>
+							<AiOutlineInfoCircle />
+							<p>More Details</p>
+						</DetailsBtn>
 					</Link>
 				</Content>
 			)}

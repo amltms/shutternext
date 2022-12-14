@@ -14,7 +14,7 @@ interface IndicatorProps {
 
 const NavBtn = styled.button`
 	position: absolute;
-	z-index: 100;
+	z-index: 10;
 	font-size: 5rem;
 	opacity: 0;
 	padding: 1rem;

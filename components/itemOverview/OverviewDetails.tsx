@@ -76,11 +76,16 @@ const Attribute = styled.div`
 	margin-right: 2rem;
 	display: inline-block;
 	color: ${theme.colors.secondaryTextColor};
+	p {
+		color: ${theme.colors.secondaryTextColor};
+		vertical-align: middle;
+		display: inline-block;
+	}
 `;
 
 const Star = styled(GoStar)`
 	fill: ${theme.colors.secondaryTextColor};
-	margin-bottom: 0.15rem;
+	margin-left: 0.3rem;
 `;
 
 export const OverviewDetails = ({ item }: Props) => {
@@ -95,10 +100,17 @@ export const OverviewDetails = ({ item }: Props) => {
 				<Item item={item}></Item>
 				<Info>
 					<p>
-						<Attribute>{(item.release_date || item.first_air_date || '----').substring(0, 4)}</Attribute>
-						{item.runtime && <Attribute>{item.runtime} mins</Attribute>}
 						<Attribute>
-							{item.vote_average?.toFixed(1)} <Star />
+							<p>{(item.release_date || item.first_air_date || '----').substring(0, 4)}</p>
+						</Attribute>
+						{item.runtime && (
+							<Attribute>
+								<p>{item.runtime} mins</p>
+							</Attribute>
+						)}
+						<Attribute>
+							<p>{item.vote_average?.toFixed(1)}</p>
+							<Star />
 						</Attribute>
 					</p>
 
