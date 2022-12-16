@@ -39,10 +39,10 @@ const Content = styled.div`
 `;
 
 const DetailsBtn = styled.div`
-	transition: 0.5s;
+	transition: 0.4s;
 	font-size: 1.5rem;
 	padding: 1.2rem;
-	background: rgba(64, 64, 64, 0.5);
+	background: rgba(84, 84, 84, 0.5);
 	border-radius: 0.9rem;
 	position: relative;
 	display: inline-block;
@@ -54,7 +54,7 @@ const DetailsBtn = styled.div`
 	}
 	:hover {
 		cursor: pointer;
-		background: rgba(0, 0, 0, 0.7);
+		background: rgba(50, 50, 50, 0.5);
 	}
 
 	svg {
