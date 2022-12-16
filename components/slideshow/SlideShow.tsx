@@ -45,7 +45,7 @@ export const SlideShow: FC<Props> = ({ items }) => {
 		} else if (currentSlide < 0) {
 			setCurrentSlide(slideArr.length - 1);
 		}
-	}, [currentSlide, slideArr.length]);
+	}, [currentSlide]);
 
 	return (
 		<Container>

@@ -1,16 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: Helvetica;
-    src: url(../fonts/HelveticaWorld-Regular.ttf);
-  }
-
-  @font-face {
-    font-family: Helvetica;
-    src: url(../fonts/HelveticaWorld-Bold.ttf);
-    font-weight: bold;
-  }
 
   *{
     margin: 0;
