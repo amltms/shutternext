@@ -1,6 +1,6 @@
 # Shutter Next.js Version
 
-> This project is a work in progress as it is being rebuilt with a Next.js stack. The previous version can be found [here](https:github.com/amltms/shutter).
+> This project is a work in progress as it is being rebuilt with a Next.js stack. The previous version can be found [here](https://github.com/amltms/shutter).
 
 ## About
 
