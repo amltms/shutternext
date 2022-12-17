@@ -21,29 +21,20 @@ const Logo = styled.a`
 `;
 
 const NavLinks = styled.div`
-	display: flex;
-	align-items: baseline;
 	span {
 		display: none;
 	}
 	a {
 		font-size: 22px;
-		padding: 0 1rem;
-		margin: 0;
-		position: relative;
-		:after {
-			content: '';
-			position: absolute;
-			width: 100%;
-			transform: scaleX(0);
-			height: 2px;
-			bottom: -8px;
-			left: 0;
-			background-color: ${({ theme }) => theme.colors.primary};
-			transition: transform 0.3s ease-out;
-		}
-		:hover:after {
-			transform: scaleX(1);
+		padding: 0.8rem;
+		margin-left: 0.5rem;
+
+		border-radius: 0.5rem;
+		transition: 0.3s;
+		color: ${({ theme }) => theme.colors.secondaryTextColor};
+		:hover {
+			color: ${({ theme }) => theme.colors.primaryTextColor};
+			background: rgba(255, 255, 255, 0.2);
 		}
 	}
 	@media screen and (max-width: 900px) {

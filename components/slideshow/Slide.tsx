@@ -11,7 +11,7 @@ const SlideContainer = styled.div`
 	max-height: 100vh;
 	min-width: 100%;
 	overflow: hidden;
-	mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
+	mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 100%);
 `;
 
 const Backdrop = styled.img`

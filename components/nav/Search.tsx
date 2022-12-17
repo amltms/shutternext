@@ -73,19 +73,17 @@ export const Search = () => {
 	}, [focused, pathname]);
 
 	return (
-		<>
-			<SearchBox active={searchActive}>
-				<MdSearch size={30} onClick={() => setSearchActive(!searchActive)} />
-				<SearchInput
-					onChange={(e) => setSearchValue(e.target.value)}
-					ref={searchInput}
-					value={searchValue}
-					onFocus={onFocus}
-					onBlur={onBlur}
-					placeholder="Search"
-					active={searchActive}
-				/>
-			</SearchBox>
-		</>
+		<SearchBox active={searchActive}>
+			<MdSearch size={30} onClick={() => setSearchActive(!searchActive)} />
+			<SearchInput
+				onChange={(e) => setSearchValue(e.target.value)}
+				ref={searchInput}
+				value={searchValue}
+				onFocus={onFocus}
+				onBlur={onBlur}
+				placeholder="Search"
+				active={searchActive}
+			/>
+		</SearchBox>
 	);
 };

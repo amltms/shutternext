@@ -13,6 +13,9 @@ const CastList = styled.div`
 	margin-top: 1.5rem;
 	display: flex;
 	flex-wrap: wrap;
+	@media screen and (max-width: 900px) {
+		flex-direction: column;
+	}
 `;
 
 const filterByJob = (credits: Credits, job: string) => {

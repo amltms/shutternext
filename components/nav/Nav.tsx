@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+
 import styled from 'styled-components';
 import NavLeft from './NavLeft';
 import { NavRight } from './NavRight';
+import { NavFullScreen } from './NavFullScreen';
+import { useRouter } from 'next/router';
 
 interface Scroll {
 	scrolled: boolean;
@@ -37,6 +40,9 @@ const NavBar = styled.div<Scroll>`
 
 const Nav = () => {
 	const [scrolled, setScrolled] = useState(false);
+	const [fullScreenToggle, setFullScreenToggle] = useState(false);
+	const router = useRouter();
+	const { type } = router.query;
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -50,10 +56,15 @@ const Nav = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		fullScreenToggle && setFullScreenToggle(false);
+	}, [type]);
+
 	return (
 		<NavBar scrolled={scrolled}>
+			<NavFullScreen show={fullScreenToggle} />
 			<NavLeft />
-			<NavRight />
+			<NavRight toggle={fullScreenToggle} setToggle={setFullScreenToggle} />
 		</NavBar>
 	);
 };

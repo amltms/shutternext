@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 2rem;
   }
 
+
   button {
     background: none;
     border: none;
@@ -101,6 +102,12 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 1rem;
     background-color: rgba(35, 35, 35, 0.8);
   }
+
+  @media screen and (max-width: 900px) {
+		h1{
+      font-size: 4rem;
+    }
+	}
 `;
 
 export default GlobalStyle;

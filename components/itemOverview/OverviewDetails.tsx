@@ -8,6 +8,11 @@ interface Props {
 	item: ItemAttributes;
 }
 
+const Title = styled.h1`
+	@media screen and (max-width: 900px) {
+		text-align: center;
+	}
+`;
 const DetailsContainer = styled.div`
 	display: flex;
 	margin: 2.5rem 0;
@@ -21,6 +26,7 @@ const Info = styled.div`
 	flex: 4;
 
 	@media screen and (max-width: 900px) {
+		margin-top: 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -46,7 +52,7 @@ const Synopsis = styled.p`
 	width: 80%;
 	@media screen and (max-width: 900px) {
 		width: 100%;
-		text-align: center;
+		font-size: 1.3rem;
 	}
 `;
 
@@ -98,7 +104,7 @@ export const OverviewDetails = ({ item }: Props) => {
 
 	return (
 		<>
-			<h1>{item.title || item.name}</h1>
+			<Title>{item.title || item.name}</Title>
 
 			<DetailsContainer>
 				<ItemImg src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt="poster" />
