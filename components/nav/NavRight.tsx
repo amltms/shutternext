@@ -23,7 +23,7 @@ const MenuIcon = styled.div`
 	z-index: 1000;
 	padding: 0.5rem;
 	display: flex;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	svg {
 		fill: ${theme.colors.secondaryTextColor};
 	}

@@ -18,7 +18,7 @@ const NavBar = styled.div<Scroll>`
 	padding: 2vw 4vw;
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 	:after {
 		content: '';
 		position: absolute;
@@ -36,6 +36,14 @@ const NavBar = styled.div<Scroll>`
 	@media screen and (max-width: 900px) {
 		padding: 1rem;
 	}
+`;
+
+const Line = styled.div`
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	bottom: 22px;
+	left: 0;
 `;
 
 const Nav = () => {
@@ -65,6 +73,7 @@ const Nav = () => {
 			<NavFullScreen show={fullScreenToggle} />
 			<NavLeft />
 			<NavRight toggle={fullScreenToggle} setToggle={setFullScreenToggle} />
+			<Line />
 		</NavBar>
 	);
 };
