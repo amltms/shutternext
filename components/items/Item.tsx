@@ -52,14 +52,9 @@ const ItemPreview = styled.div<PreviewItems>`
 		transition-delay: 0.5s;
 		transform: translate(${({ titleWidth }) => (titleWidth > 175 ? `-${titleWidth - 170}px` : '0')});
 	}
-`;
-
-const SaveIcon = styled.div`
-	position: absolute;
-	padding: 1rem;
-	right: 0;
-	z-index: 1000;
-	font-size: 1.8rem;
+	@media screen and (max-width: 900px) {
+		display: none;
+	}
 `;
 
 const PreviewContent = styled.div`
@@ -99,9 +94,9 @@ export const Item = ({ item }: ItemProps) => {
 	}, [title]);
 
 	return (
-		<ItemContainer>
+		<ItemContainer onClick={() => router.push(`/overview/${item.media_type ? item.media_type : type}/${item.id}`)}>
 			<ItemPreview titleWidth={titleRef}>
-				<PreviewContent onClick={() => router.push(`/overview/${item.media_type ? item.media_type : type}/${item.id}`)}>
+				<PreviewContent>
 					<h2 ref={title}>{item.title || item.name}</h2>
 					<p>{(item.release_date || item.first_air_date || '----').substring(0, 4)}</p>
 				</PreviewContent>

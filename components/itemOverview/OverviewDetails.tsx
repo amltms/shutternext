@@ -11,6 +11,8 @@ interface Props {
 const Title = styled.h1`
 	@media screen and (max-width: 900px) {
 		text-align: center;
+		margin-top: 5rem;
+		font-size: 2.5rem;
 	}
 `;
 const DetailsContainer = styled.div`
@@ -24,7 +26,6 @@ const DetailsContainer = styled.div`
 
 const Info = styled.div`
 	flex: 4;
-
 	@media screen and (max-width: 900px) {
 		margin-top: 2rem;
 		display: flex;
@@ -40,11 +41,10 @@ const ItemImg = styled.img`
 	position: relative;
 	overflow: hidden;
 	height: 300px;
-	transform: scale(1.2);
-	transform-origin: top left;
 	margin: 0 5rem 5rem 0;
 	@media screen and (max-width: 900px) {
 		height: 25rem;
+		margin: 0;
 	}
 `;
 

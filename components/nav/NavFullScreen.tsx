@@ -39,6 +39,7 @@ export const NavFullScreen = ({ show }: Props) => {
 	return (
 		<FullScreenMenu show={show}>
 			<Link href="/">Home</Link>
+			<Link href="/search">Search</Link>
 			<Link href="/movie">Movies</Link>
 			<Link href="/tv">TV</Link>
 		</FullScreenMenu>

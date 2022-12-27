@@ -20,9 +20,7 @@ const Container = styled.div`
 `;
 
 const MenuIcon = styled.div`
-	z-index: 1000;
-	padding: 0.5rem;
-	display: flex;
+	z-index: 200;
 	font-size: 2.5rem;
 	svg {
 		fill: ${theme.colors.secondaryTextColor};

@@ -28,7 +28,8 @@ const NavBar = styled.div<Scroll>`
 		height: 100%;
 		transform: scaleY(${({ scrolled }) => (scrolled ? '1' : '0')});
 		transform-origin: top center;
-		background: rgba(0, 0, 0, 1);
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(20px);
 		z-index: -1;
 		transition: transform 0.3s;
 	}
@@ -38,19 +39,10 @@ const NavBar = styled.div<Scroll>`
 	}
 `;
 
-const Line = styled.div`
-	width: 100%;
-	height: 1px;
-	position: absolute;
-	bottom: 22px;
-	left: 0;
-`;
-
 const Nav = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [fullScreenToggle, setFullScreenToggle] = useState(false);
 	const router = useRouter();
-	const { type } = router.query;
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -66,14 +58,13 @@ const Nav = () => {
 
 	useEffect(() => {
 		fullScreenToggle && setFullScreenToggle(false);
-	}, [type]);
+	}, [router.pathname]);
 
 	return (
 		<NavBar scrolled={scrolled}>
 			<NavFullScreen show={fullScreenToggle} />
 			<NavLeft />
 			<NavRight toggle={fullScreenToggle} setToggle={setFullScreenToggle} />
-			<Line />
 		</NavBar>
 	);
 };
