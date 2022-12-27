@@ -34,7 +34,7 @@ const DotContainer = styled.div`
 	width: 100%;
 	position: absolute;
 	bottom: 2rem;
-	z-index: 10;
+	z-index: 12;
 	cursor: pointer;
 	> div {
 		display: inline-block;

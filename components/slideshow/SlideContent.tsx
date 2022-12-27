@@ -13,7 +13,7 @@ const Content = styled.div`
 	position: absolute;
 	left: 0;
 	width: 100%;
-	z-index: 110;
+	z-index: 10;
 	bottom: 0;
 	padding: 0 4vw;
 	padding-bottom: 5vw;

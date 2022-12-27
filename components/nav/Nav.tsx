@@ -58,11 +58,11 @@ const Nav = () => {
 
 	useEffect(() => {
 		fullScreenToggle && setFullScreenToggle(false);
-	}, [router.pathname]);
+	}, [router.asPath]);
 
 	return (
 		<NavBar scrolled={scrolled}>
-			<NavFullScreen show={fullScreenToggle} />
+			{fullScreenToggle && <NavFullScreen />}
 			<NavLeft />
 			<NavRight toggle={fullScreenToggle} setToggle={setFullScreenToggle} />
 		</NavBar>

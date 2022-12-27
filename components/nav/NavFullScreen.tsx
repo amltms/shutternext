@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-interface Props {
-	show: boolean;
-}
-interface MenuProps {
-	show: boolean;
-}
-
-const FullScreenMenu = styled.div<MenuProps>`
+const Container = styled(motion.div)`
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -21,8 +15,6 @@ const FullScreenMenu = styled.div<MenuProps>`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	transition: visibility 1s, opacity 0.5s linear;
-	${({ show }) => (show ? 'opacity:1; visibility: visible;' : 'opacity:0; visibility: hidden;')};
 
 	a {
 		display: block;
@@ -35,13 +27,13 @@ const FullScreenMenu = styled.div<MenuProps>`
 	}
 `;
 
-export const NavFullScreen = ({ show }: Props) => {
+export const NavFullScreen = () => {
 	return (
-		<FullScreenMenu show={show}>
+		<Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 			<Link href="/">Home</Link>
 			<Link href="/search">Search</Link>
 			<Link href="/movie">Movies</Link>
 			<Link href="/tv">TV</Link>
-		</FullScreenMenu>
+		</Container>
 	);
 };
