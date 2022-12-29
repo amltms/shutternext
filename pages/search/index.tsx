@@ -6,6 +6,7 @@ import { ItemList } from '../../components/items/ItemList';
 
 const SearchContainer = styled(motion.div)`
 	padding: 12vw 7vw;
+	padding-bottom: 1rem;
 `;
 
 const Text = styled.div`
@@ -58,11 +59,14 @@ const index = () => {
 	};
 
 	return (
-		<SearchContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-			<Search>
-				<MdSearch size={40} />
-				<input type="text" value={search} onChange={(e) => handleSearch(e.target.value)} />
-			</Search>
+		<>
+			<SearchContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+				<Search>
+					<MdSearch size={40} />
+					<input type="text" value={search} onChange={(e) => handleSearch(e.target.value)} />
+				</Search>
+			</SearchContainer>
+
 			{searchItems.length === 0 && !typing && search !== '' ? (
 				<Text>
 					<h2>No Results</h2>
@@ -70,7 +74,7 @@ const index = () => {
 			) : (
 				search && <ItemList items={searchItems} />
 			)}
-		</SearchContainer>
+		</>
 	);
 };
 

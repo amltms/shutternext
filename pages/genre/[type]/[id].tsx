@@ -25,8 +25,12 @@ const Backdrop = styled.img`
 	}
 `;
 
-const Details = styled.div`
-	padding: 20% 5vw;
+const Title = styled.h1`
+	padding: 0 5vw;
+	padding-top: 20%;
+	@media screen and (max-width: 900px) {
+		padding-top: 50%;
+	}
 `;
 
 const Index = () => {
@@ -65,10 +69,8 @@ const Index = () => {
 	) : (
 		<Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
 			<Backdrop src={`https://image.tmdb.org/t/p/original/${items[getRandomInt(19)]?.backdrop_path}`} alt="backdrop" />
-			<Details>
-				<h1>{genreName}</h1>
-				<ItemList items={items} />
-			</Details>
+			<Title>{genreName}</Title>
+			<ItemList items={items} />
 		</Container>
 	);
 };

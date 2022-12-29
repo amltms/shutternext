@@ -60,6 +60,9 @@ const DetailsBtn = styled.div`
 	svg {
 		margin-right: 0.5rem;
 	}
+	@media screen and (max-width: 900px) {
+		padding: 1rem;
+	}
 `;
 
 const textTransition = keyframes`
