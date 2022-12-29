@@ -12,12 +12,17 @@ interface PreviewItems {
 }
 
 const ItemContainer = styled.div`
-	margin: 1rem 1rem 1rem 0rem;
+	margin: 0.5rem;
 	transition: 0.3s;
 	position: relative;
 	overflow: hidden;
 	:hover {
 		transform: translate(0, -10%);
+	}
+	@media screen and (max-width: 900px) {
+		:hover {
+			transform: none;
+		}
 	}
 `;
 
@@ -29,7 +34,7 @@ const ItemImg = styled.img`
 	overflow: hidden;
 	height: 300px;
 	@media screen and (max-width: 900px) {
-		height: 25rem;
+		height: 15rem;
 	}
 `;
 
