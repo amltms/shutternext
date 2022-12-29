@@ -46,7 +46,7 @@ const DetailsBtn = styled.div`
 	border-radius: 0.9rem;
 	position: relative;
 	display: inline-block;
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 	p {
 		vertical-align: middle;
 		display: inline-block;
@@ -59,9 +59,6 @@ const DetailsBtn = styled.div`
 
 	svg {
 		margin-right: 0.5rem;
-	}
-	@media screen and (max-width: 900px) {
-		padding: 1rem;
 	}
 `;
 
@@ -87,12 +84,12 @@ const AnimateContainer = styled.div`
 const Genres = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 1rem;
+	padding: 1rem 0;
 `;
 
 const GenreName = styled.span`
 	font-size: 1.6rem;
-	padding: 0.5rem 0;
+	padding: 0.25rem 0;
 	padding-right: 2rem;
 	color: ${({ theme }) => theme.colors.secondaryTextColor};
 	transition: 0.4s;
@@ -100,6 +97,7 @@ const GenreName = styled.span`
 	font-weight: 300;
 	@media screen and (max-width: 900px) {
 		font-size: 1.3rem;
+		padding-right: 1rem;
 	}
 	:hover {
 		cursor: pointer;
