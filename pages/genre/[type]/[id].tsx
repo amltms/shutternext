@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { ItemList } from '../../../components/items/ItemList';
 import Spinner from '../../../components/utilities/Spinner';
+import { theme } from '../../../styles/theme';
 
 const Container = styled(motion.div)`
 	overflow: hidden;
@@ -26,7 +27,7 @@ const Backdrop = styled.img`
 `;
 
 const Title = styled.h1`
-	padding: 0 5vw;
+	padding: 0 ${theme.container.width};
 	padding-top: 20%;
 	@media screen and (max-width: 900px) {
 		padding-top: 50%;

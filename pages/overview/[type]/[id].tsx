@@ -6,18 +6,19 @@ import { Credits, ItemAttributes } from '../../../types';
 import { OverviewDetails } from '../../../components/itemOverview/OverviewDetails';
 import { ItemCredits } from '../../../components/itemOverview/credits/ItemCredits';
 import Spinner from '../../../components/utilities/Spinner';
+import { theme } from '../../../styles/theme';
 
 const Container = styled(motion.div)`
 	overflow: hidden;
 	position: relative;
-`;
-const ItemDetails = styled.div`
-	padding: 20% 5vw;
+	padding: 20% ${theme.container.width};
 `;
 
 const Backdrop = styled.img`
 	z-index: -1;
 	position: absolute;
+	top: 0;
+	left: 0;
 	opacity: 1;
 	width: 100%;
 	filter: brightness(60%);
@@ -53,10 +54,8 @@ const ItemOverview = () => {
 			{credits && item?.backdrop_path ? (
 				<Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
 					<Backdrop src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt="backdrop" />
-					<ItemDetails>
-						<OverviewDetails item={item} />
-						<ItemCredits credits={credits} />
-					</ItemDetails>
+					<OverviewDetails item={item} />
+					<ItemCredits credits={credits} />
 				</Container>
 			) : (
 				<Spinner />

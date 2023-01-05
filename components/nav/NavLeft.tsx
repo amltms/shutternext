@@ -18,6 +18,11 @@ const Logo = styled.a`
 	:hover {
 		color: rgba(0, 0, 0, 0);
 	}
+	@media screen and (max-width: 900px) {
+		:hover {
+			color: ${({ theme }) => theme.colors.primary};
+		}
+	}
 `;
 
 const NavLinks = styled.div`

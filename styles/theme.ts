@@ -3,7 +3,7 @@ interface ThemeInterface {
 		[key: string]: string;
 	};
 	container: {
-		[key: string]: string;
+		width: string;
 	};
 }
 
@@ -21,6 +21,6 @@ export const theme: ThemeInterface = {
 		secondaryTextColor: '#bdbcbc',
 	},
 	container: {
-		width: '4vw',
+		width: '6vw',
 	},
 };

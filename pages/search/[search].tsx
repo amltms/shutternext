@@ -4,9 +4,10 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { ItemList } from '../../components/items/ItemList';
 import Spinner from '../../components/utilities/Spinner';
+import { theme } from '../../styles/theme';
 
 const SearchContainer = styled(motion.div)`
-	padding: 12vw 7vw;
+	padding: 12vw ${theme.container.width};
 `;
 
 const Text = styled.div`

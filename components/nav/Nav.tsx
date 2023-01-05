@@ -5,6 +5,7 @@ import NavLeft from './NavLeft';
 import { NavRight } from './NavRight';
 import { NavFullScreen } from './NavFullScreen';
 import { useRouter } from 'next/router';
+import { theme } from '../../styles/theme';
 
 interface Scroll {
 	scrolled: boolean;
@@ -15,7 +16,7 @@ const NavBar = styled.div<Scroll>`
 	width: 100%;
 	position: fixed;
 	transition: 0.4s;
-	padding: 2vw 4vw;
+	padding: 4rem ${theme.container.width};
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -33,9 +34,9 @@ const NavBar = styled.div<Scroll>`
 		z-index: -1;
 		transition: transform 0.3s;
 	}
-	${({ scrolled }) => scrolled && 'padding:1.5rem 2vw;'};
+	${({ scrolled }) => scrolled && 'padding:2rem 2vw;'};
 	@media screen and (max-width: 900px) {
-		padding: 1rem;
+		padding: 1.5rem;
 	}
 `;
 

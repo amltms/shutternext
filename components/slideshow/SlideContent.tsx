@@ -4,6 +4,7 @@ import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ItemAttributes } from '../../types';
+import { theme } from '../../styles/theme';
 
 interface Props {
 	slideContent: ItemAttributes;
@@ -15,7 +16,7 @@ const Content = styled.div`
 	width: 100%;
 	z-index: 10;
 	bottom: 0;
-	padding: 0 4vw;
+	padding: 0 ${theme.container.width};
 	padding-bottom: 5vw;
 	width: auto;
 	h1 {
@@ -23,9 +24,6 @@ const Content = styled.div`
 		font-size: 5vw;
 		cursor: pointer;
 		transition: 0.5s;
-		:hover {
-			color: ${({ theme }) => theme.colors.primary};
-		}
 	}
 
 	@media screen and (max-width: 1600px) {

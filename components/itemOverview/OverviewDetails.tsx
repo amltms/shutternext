@@ -42,7 +42,7 @@ const ItemImg = styled.img`
 	position: relative;
 	overflow: hidden;
 	height: 300px;
-	margin: 0 5rem 5rem 0;
+	margin-right: 3rem;
 	@media screen and (max-width: 900px) {
 		height: 25rem;
 		margin: 0;
