@@ -11,7 +11,7 @@ interface Props {
 const Title = styled.h1`
 	@media screen and (max-width: 900px) {
 		text-align: center;
-		margin-top: 5rem;
+		margin-top: 7rem;
 		font-size: 2.5rem;
 	}
 `;
@@ -80,6 +80,12 @@ const Genres = styled.div`
 	}
 	@media screen and (max-width: 900px) {
 		justify-content: center;
+		div {
+			background: rgba(190, 190, 190, 0.3);
+			border: none;
+			padding: 0.5rem;
+			margin-right: 0.5rem;
+		}
 	}
 `;
 

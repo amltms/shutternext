@@ -19,6 +19,7 @@ const Logo = styled.a`
 		color: rgba(0, 0, 0, 0);
 	}
 	@media screen and (max-width: 900px) {
+		font-size: 40px;
 		:hover {
 			color: ${({ theme }) => theme.colors.primary};
 		}

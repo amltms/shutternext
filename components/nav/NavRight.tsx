@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const MenuIcon = styled.div`
 	z-index: 200;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	svg {
 		fill: ${theme.colors.secondaryTextColor};
 	}

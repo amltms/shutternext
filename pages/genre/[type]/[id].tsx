@@ -31,6 +31,7 @@ const Title = styled.h1`
 	padding-top: 20%;
 	@media screen and (max-width: 900px) {
 		padding-top: 50%;
+		font-size: 2.5rem;
 	}
 `;
 

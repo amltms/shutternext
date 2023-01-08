@@ -34,9 +34,9 @@ const NavBar = styled.div<Scroll>`
 		z-index: -1;
 		transition: transform 0.3s;
 	}
-	${({ scrolled }) => scrolled && 'padding:2rem 2vw;'};
+	${({ scrolled }) => scrolled && 'padding:1.5rem 2vw;'};
 	@media screen and (max-width: 900px) {
-		padding: 1.5rem;
+		padding: 0.8rem 1.4rem;
 	}
 `;
 
