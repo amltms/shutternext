@@ -28,12 +28,21 @@ The aim of this project was to provide users with an easy and convenient way to 
 
 ### HomePage
 
-![Shutter Homepage](https://amltms.com/shutter-home.jpg)
-
-![Shutter Homepage](https://amltms.com/shutter-home-2.jpg)
+![Shutter Home](https://amltms.com/shutter-home.png)
 
 ### More Details
 
-![Shutter More Details](https://amltms.com/shutter-overview.jpg)
+![Shutter More Details](https://amltms.com/shutter-overview.png)
 
-![Shutter More Details](https://amltms.com/shutter-overview-2.jpg)
+### Genres
+
+![Shutter Genres](https://amltms.com/shutter-genre.png)
+
+### Search
+
+![Shutter Search](https://amltms.com/shutter-search.png)
+
+### Mobile
+
+| ![Shutter Home](https://amltms.com/shutter-home-m.png) | ![Shutter Nav](https://amltms.com/shutter-nav-m.png) | ![Shutter Genre](https://amltms.com/shutter-genre-m.png) |
+| ------------------------------------------------------ | ---------------------------------------------------- | -------------------------------------------------------- |
